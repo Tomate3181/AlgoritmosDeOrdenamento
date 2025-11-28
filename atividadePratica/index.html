@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmos de Ordenamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section class="principal">
+            <div class="input">
+                <label for="numeros">Digite alguns números abaixo:</label>
+                <textarea name="numeros" id="numeros" placeholder="Digite os números aqui separados por vírgula (Ex: 2, 3 ,8, 0, 1, ...)"></textarea>
+            </div>
+            <div class="botoes">
+                <button type="button" onclick="bubbleSort()">Bubble Sort</button>
+                <button type="button" onclick="selectionSort()">Selection Sort</button>
+                <button type="button" onclick="insertionSort()">Insertion Sort</button>
+                <button type="button" onclick="executarMergeSort()">Merge Sort</button>
+            </div>
+            <div class="resultados">
+                <label for="resultado">Resultado: </label>
+                <textarea name="resultado" id="resultado" placeholder="O resultado irá aparecer aqui" disabled></textarea>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
