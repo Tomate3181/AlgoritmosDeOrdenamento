@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualizador de Algoritmos de Ordenação</title>
+    <meta name="description" content="Visualize algoritmos de ordenação em tempo real com animações interativas e gráficos coloridos">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                Visualizador de Algoritmos de Ordenação
+            </h1>
+            <p class="subtitle">Veja a mágica dos algoritmos em ação com animações em tempo real</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <div class="control-group">
+                    <label for="arraySize" class="control-label">
+                        <span class="label-text">Quantidade de Números</span>
+                        <span class="label-value" id="arraySizeValue">50</span>
+                    </label>
+                    <input 
+                        type="range" 
+                        id="arraySize" 
+                        min="5" 
+                        max="200" 
+                        value="50" 
+                        class="slider"
+                    >
+                </div>
+
+                <div class="control-group">
+                    <label for="animationSpeed" class="control-label">
+                        <span class="label-text">Velocidade da Animação</span>
+                        <span class="label-value" id="speedValue">Média</span>
+                    </label>
+                    <input 
+                        type="range" 
+                        id="animationSpeed" 
+                        min="1" 
+                        max="5" 
+                        value="3" 
+                        class="slider"
+                    >
+                </div>
+
+                <button id="generateArray" class="btn btn-secondary">
+                    Gerar Novo Array
+                </button>
+            </div>
+
+            <!-- Algorithm Buttons -->
+            <div class="algorithm-buttons">
+                <button id="bubbleSort" class="btn btn-algorithm btn-bubble" data-algorithm="bubble">
+                    <span class="btn-content">
+                        <span class="btn-text">Bubble Sort</span>
+                    </span>
+                    <span class="btn-complexity">O(n²)</span>
+                </button>
+
+                <button id="selectionSort" class="btn btn-algorithm btn-selection" data-algorithm="selection">
+                    <span class="btn-content">
+                        <span class="btn-text">Selection Sort</span>
+                    </span>
+                    <span class="btn-complexity">O(n²)</span>
+                </button>
+
+                <button id="insertionSort" class="btn btn-algorithm btn-insertion" data-algorithm="insertion">
+                    <span class="btn-content">
+                        <span class="btn-text">Insertion Sort</span>
+                    </span>
+                    <span class="btn-complexity">O(n²)</span>
+                </button>
+
+                <button id="mergeSort" class="btn btn-algorithm btn-merge" data-algorithm="merge">
+                    <span class="btn-content">
+                        <span class="btn-text">Merge Sort</span>
+                    </span>
+                    <span class="btn-complexity">O(n log n)</span>
+                </button>
+            </div>
+
+            <!-- Stats Display -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-label">Comparações</div>
+                        <div class="stat-value" id="comparisons">0</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-label">Trocas</div>
+                        <div class="stat-value" id="swaps">0</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-label">Tempo Decorrido</div>
+                        <div class="stat-value" id="timeElapsed">0ms</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-content">
+                        <div class="stat-label">Algoritmo Atual</div>
+                        <div class="stat-value" id="currentAlgorithm">Nenhum</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visualization Area -->
+            <div class="visualization-container">
+                <div id="arrayContainer" class="array-container"></div>
+            </div>
+
+            <!-- Result Display -->
+            <div class="result-container" id="resultContainer" style="display: none;">
+                <div class="result-header">
+                    <h3>Array Ordenado</h3>
+                </div>
+                <div class="result-content" id="resultContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
